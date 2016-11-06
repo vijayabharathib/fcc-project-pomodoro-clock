@@ -22,7 +22,7 @@ gulp.task('style',function() {
 gulp.task('browserSync', function() {
 	browserSync.init({
 		server: {
-			baseDir: './public'
+			baseDir: '.'
 		}
 	});
 });
@@ -36,22 +36,21 @@ gulp.task('scramble',function(){
 });
 
 gulp.task('minify',function(){
-	gulp.src('./app/*.html')
+	gulp.src('./*.html')
 		//.pipe(htmlmin({collapseWhitespace:true}))
-		.pipe(gulp.dest('./public/'))
+		.pipe(gulp.dest('./'))
 });
 
 gulp.task('hamldown',function(){
 	gulp.src('./app/*.haml')
 		.pipe(haml({ext:'.html'}))
-		.pipe(gulp.dest('./public/'));
+		.pipe(gulp.dest('./'));
 });
 
 gulp.task('default',['browserSync','style','scramble','minify','hamldown'],function(){
 	gulp.watch('./app/styles/**/*.scss',['style']);
 	gulp.watch('./app/scripts/**/*.js',['scramble']);
-	gulp.watch('./app/*.html',['minify']);
+	gulp.watch('./*.html',['minify']);
 	gulp.watch('./app/*.haml',['hamldown']);
-	gulp.watch("app/*.html").on('change', browserSync.reload);
-
+	gulp.watch("app/*.haml").on('change', browserSync.reload);
 });
