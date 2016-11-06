@@ -68,9 +68,13 @@ function setupOnOff(){
     window.setTimeout(function(){
       clearInterval(sessionID);
       onOff.innerText="Start";
+      onOff.classList.toggle("start");
+      onOff.classList.toggle("stop");
       status.innerText="Ready for another session?";
       countDown.innerText=pomodori_text.value + ":00";
     },sessionDuration);
+    onOff.classList.toggle("start");
+    onOff.classList.toggle("stop");
   }
   function updateTimer(){
     var elapsedTime=new Date();
@@ -88,5 +92,7 @@ function setupOnOff(){
       clearInterval(sessionID);
       this.innerText='Start';
     }
+    onOff.classList.toggle("start");
+    onOff.classList.toggle("stop");
   };
 }
