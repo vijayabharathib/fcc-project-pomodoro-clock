@@ -1,11 +1,15 @@
+html{
+  height: 100%;
+}
 body {
   margin: 0;
-  background: #abc;
+  min-height: 100%;
   font-size: 16px;
   color: #333;
   @media(min-width: 321px){
     padding-top: 1em;
   }
+  animation: 180s background_swatch infinite;
 }
 h1,h2,h3,h4 {
   margin-bottom: 0;
@@ -13,10 +17,18 @@ h1,h2,h3,h4 {
 .container {
   max-width: 320px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, .5);
+  background: rgba(255, 255, 255, .2);
   box-sizing: border-box;
   padding: 5px;
   @media(min-width: 321px) {
     border-radius: 10px;
   }
+}
+
+@keyframes background_swatch {
+  0% { background-color: #013f4b; color: rgba(255,255,255,.7);}
+  25% {  background-color: #005628;color: rgba(255,255,255,.7);}
+  50% { background-color: #021f36;color: rgba(255,255,255,.7);}
+  75% { background-color: #650031;color: rgba(255,255,255,.7);}
+  100% { background-color: #013f4b;color: rgba(255,255,255,.7);}
 }

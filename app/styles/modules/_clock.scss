@@ -1,6 +1,6 @@
 .brand{
-  color: #333;
-  text-shadow: 0 -1px #789;
+  color: #fff;
+  text-shadow: 0 -1px rgba(0,0,0,.7);
   text-align: center;
   margin-top: 0;
 }
@@ -8,7 +8,9 @@
 .countdown {
   display: block;
   font-size: 7em;
-  color: #339;
+  color: #fff;
+  text-shadow: 0 -1px rgba(0,0,0,.3),
+    1px -2px rgba(0,0,0,.3);
   text-align: center;
 }
 
@@ -23,27 +25,15 @@
   font-size: 3em;
   width: 280px;
   cursor: pointer;
-  box-sizing: border-box;
-
-  &.start{
-    background: #393;
-    &:active {
-      background: #933;
-    }
-  }
-  &.stop {
-    background: #933;
-    &:active {
-      background: #393;
-    }
-  }
+  box-sizing: padding-box;
+  border: 4px solid rgba(255,255,255,.7);
+  opacity: .8;
+  animation: 180s background_swatch infinite;
   &:focus{
     outline: none;
-    border: 4px solid white;
   }
-
   &:hover {
-    background: #177;
+    opacity: 1;
   }
 }
 
@@ -54,36 +44,37 @@
 input[type=range]{
     -webkit-appearance: none;
     width: 220px;
+    opacity: .8;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-    height: 15px;
-    background: #399;
-    border: none;
-    border-radius: 5px;
+    -webkit-appearance: none;
+    height: 10px;
+    background: #fff;
+    border-top: 2px solid rgba(0,0,0,.7);
 }
 
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    border: 2px solid white;
+    border: 8px solid rgba(255,255,255,.7);
     height: 32px;
     width: 32px;
     border-radius: 50%;
-    background: #177;
-    margin-top: -8px;
-    &:focus{
-      outline: none;
-    }
+    background: #fff;
+    background: rgba(0,0,0,.8);
+    margin-top: -12px;
 }
 
 input[type=range]:focus {
   outline: none;
 
   &::-webkit-slider-runnable-track {
-    background: #393;
+    background-color: #ccc;
+    background: rgba(255,255,255,.3);
   }
   &::-webkit-slider-thumb {
-    background: #171;
+    background: #fff906;
+    border: 8px solid rgba(255,25,55,.7);
   }
 }
 
@@ -94,5 +85,6 @@ input[type="number"]{
   margin-left: 10px;
   border: none;
   background: none;
-  color: #177;
+  color: #fff;
+  color: rgba(255,255,255,.7);
 }
