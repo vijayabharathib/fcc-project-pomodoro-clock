@@ -49,7 +49,7 @@ function setupOnOff(){
   var onOff=document.querySelector('.onoff');
 
   function startTimer(){
-    status.innerText="Pomodoro session counting down";
+    status.innerText="Pomodoro counting down";
     sessionDuration=Number.parseInt(pomodori_text.value)*60000;
     sessionID=window.setInterval(updateTimer,1000);
     window.setTimeout(pomodoroTimeout,sessionDuration);
