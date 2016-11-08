@@ -1,6 +1,6 @@
 .brand{
-  color: #fff;
-  text-shadow: 0 -1px rgba(0,0,0,.7);
+  color: $color-white;
+  text-shadow: 0 -1px $color-black-transparent-tint;
   text-align: center;
   margin-top: 0;
 }
@@ -8,9 +8,9 @@
 .countdown {
   display: block;
   font-size: 7em;
-  color: #fff;
-  text-shadow: 0 -1px rgba(0,0,0,.3),
-    1px -2px rgba(0,0,0,.3);
+  color: $color-white;
+  text-shadow: 0 -1px $color-black-transparent-shade,
+    1px -2px $color-black-transparent-shade;
   text-align: center;
 }
 
@@ -18,15 +18,14 @@
   display: block;
   margin: 10px auto;
   color: white;
-  color: rgba(255,255,255,.8);
-  border: none;
+  color: $color-white-transparent-tint;
   border-radius: 10px;
   padding: .2em;
   font-size: 3em;
   width: 280px;
   cursor: pointer;
   box-sizing: padding-box;
-  border: 4px solid rgba(255,255,255,.7);
+  border: 4px solid $color-white-transparent-tint;
   opacity: .8;
   animation: 180s background_swatch infinite;
   &:focus{
@@ -34,34 +33,36 @@
   }
   &:hover {
     opacity: 1;
+    border: 4px solid $color-white;
   }
 }
 
 .current_status {
-  text-align: center;
+  //text-align: center;
 }
 
 input[type=range]{
     -webkit-appearance: none;
     width: 220px;
     opacity: .8;
+    margin-top: 12px;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
     -webkit-appearance: none;
     height: 10px;
-    background: #fff;
-    border-top: 2px solid rgba(0,0,0,.7);
+    background: $color-white;
+    border-top: 2px solid $color-black-transparent-tint;
 }
 
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    border: 8px solid rgba(255,255,255,.7);
+    border: 8px solid $color-white-transparent-tint;
     height: 32px;
     width: 32px;
     border-radius: 50%;
-    background: #fff;
-    background: rgba(0,0,0,.8);
+    background: $color-black;
+    background: $color-black-transparent-tint;
     margin-top: -12px;
 }
 
@@ -69,12 +70,12 @@ input[type=range]:focus {
   outline: none;
 
   &::-webkit-slider-runnable-track {
-    background-color: #ccc;
-    background: rgba(255,255,255,.3);
+    background-color: $color-white;
+    background: $color-white-transparent-shade;
   }
   &::-webkit-slider-thumb {
-    background: #fff906;
-    border: 8px solid rgba(255,25,55,.7);
+    background: $color-yellow;
+    border: 8px solid $color-orange;
   }
 }
 
@@ -85,6 +86,7 @@ input[type="number"]{
   margin-left: 10px;
   border: none;
   background: none;
-  color: #fff;
-  color: rgba(255,255,255,.7);
+  color: $color-white;
+  color: $color-white-transparent-tint;
+  float: right;
 }

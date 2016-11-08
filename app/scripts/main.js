@@ -5,7 +5,6 @@
   var sessionStart;
   var sessionDuration;
 document.addEventListener("DOMContentLoaded",function(e){
-  console.log('content ready');
   setupSlideHandlers();
   setupKeyHandlers();
   setupOnOff();
@@ -55,7 +54,6 @@ function setupOnOff(){
     window.setTimeout(pomodoroTimeout,sessionDuration);
     sessionStart=new Date();
     sessionStart=sessionStart.getTime();
-    console.log('session start:'+sessionStart);
   };
 
   function pomodoroTimeout(){
@@ -85,12 +83,12 @@ function setupOnOff(){
     countDown.innerText=remainingMinutes + ":" + remainingSeconds;
   };
   onOff.onclick=function(){
-    if(this.innerText=='Start') {
+    if(this.innerText=='Start' || this.innerText=='Restart') {
       this.innerText='Stop';
       startTimer();
     }else{
       clearInterval(sessionID);
-      this.innerText='Start';
+      this.innerText='Restart';
     }
     onOff.classList.toggle("start");
     onOff.classList.toggle("stop");
