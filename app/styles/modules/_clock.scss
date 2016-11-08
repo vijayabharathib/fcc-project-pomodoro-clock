@@ -1,51 +1,51 @@
-.brand{
-  color: $color-white;
-  text-shadow: 0 -1px $color-black-transparent-tint;
-  text-align: center;
+.brand {
   margin-top: 0;
+  color: $color-white;
+  text-align: center;
+  text-shadow: 0 -1px $color-black-transparent-tint;
 }
 
 .countdown {
   display: block;
-  font-size: 7em;
   color: $color-white;
-  text-shadow: 0 -1px $color-black-transparent-shade,
-    1px -2px $color-black-transparent-shade;
+  font-size: 7em;
   text-align: center;
+  //create a deep embedded effect
+  text-shadow: 0 -1px $color-black-transparent-shade,
+  1px -2px $color-black-transparent-shade;
 }
 
 .onoff {
   display: block;
-  margin: 10px auto;
-  color: white;
-  color: $color-white-transparent-tint;
-  border-radius: 10px;
-  padding: .2em;
-  font-size: 3em;
   width: 280px;
-  cursor: pointer;
-  box-sizing: padding-box;
+  margin: 10px auto;
+  padding: .2em;
   border: 4px solid $color-white-transparent-tint;
+  border-radius: 10px;
+  color: $color-white;
+  color: $color-white-transparent-tint;
+  font-size: 3em;
+  cursor: pointer;
   opacity: .8;
+  box-sizing: padding-box;
   animation: 180s background_swatch infinite;
-  &:focus{
+
+  &:focus {
     outline: none;
   }
+
+  //make it darker on hover
   &:hover {
-    opacity: 1;
     border: 4px solid $color-white;
+    opacity: 1;
   }
 }
 
-.current_status {
-  //text-align: center;
-}
-
-input[type=range]{
-    -webkit-appearance: none;
-    width: 220px;
-    opacity: .8;
-    margin-top: 12px;
+input[type=range] {
+  -webkit-appearance: none;
+  margin-top: 12px;
+  opacity: .8;
+  width: 220px;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
@@ -61,7 +61,7 @@ input[type=range]::-webkit-slider-thumb {
     height: 32px;
     width: 32px;
     border-radius: 50%;
-    background: $color-black;
+    background: $color-black; //rgba fallback
     background: $color-black-transparent-tint;
     margin-top: -12px;
 }
@@ -70,7 +70,7 @@ input[type=range]:focus {
   outline: none;
 
   &::-webkit-slider-runnable-track {
-    background-color: $color-white;
+    background-color: $color-white; //rgba fallback
     background: $color-white-transparent-shade;
   }
   &::-webkit-slider-thumb {
