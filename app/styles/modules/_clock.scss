@@ -90,3 +90,15 @@ input[type="number"]{
   color: $color-white-transparent-tint;
   float: right;
 }
+
+footer {
+  text-align: center;
+  a {
+    color: $color-white;
+    color: $color-white-transparent-tint;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+}
